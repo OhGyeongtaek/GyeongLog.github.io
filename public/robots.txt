@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ogt-blog.netlify.app/sitemap.xml
+Host: https://ogt-blog.netlify.app

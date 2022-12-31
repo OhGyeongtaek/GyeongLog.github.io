@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.4.0"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">GyeongLog | [Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항!</title><link data-react-helmet="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/><meta data-react-helmet="true" name="description" content="[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항을 확인해보세요."/><meta data-react-helmet="true" property="og:title" content="GyeongLog | [Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항!"/><meta data-react-helmet="true" property="og:description" content="[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항을 확인해보세요."/><meta data-react-helmet="true" property="google-site-verification" content="1GpNCEOiYHBY3AjieDZndBpwcsf7EJ76U-Q-2YPkSuQ"/><meta data-react-helmet="true" property="og:image" content="https://user-images.githubusercontent.com/20200820/139200331-508670ad-af76-482e-82f9-0f1b62d9ed83.png"/><link as="script" rel="preload" href="/webpack-runtime-25e65904cfbb412ebfd3.js"/><link as="script" rel="preload" href="/framework-044cb0740845eef20740.js"/><link as="script" rel="preload" href="/app-a8ae3919c49a26b8f93d.js"/><link as="script" rel="preload" href="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js"/><link as="script" rel="preload" href="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js"/><link as="script" rel="preload" href="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"/><link as="fetch" rel="preload" href="/page-data/Gatsbyjs/Netlify로-호스팅-후-SEO-처리-시-유의사항/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><style data-emotion="css-global 1hm1e23">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}body{font-family:"Noto Sans Kr";}a{color:#3333;-webkit-text-decoration:none;text-decoration:none;}@media print{#header{display:none;}#footer{display:none;}}</style><style data-emotion="css p3g41d">.css-p3g41d{padding:20px 0;border-bottom:1px solid #eee;}</style><header id="header" class="css-p3g41d e1cbifli1"><a href="/"><style data-emotion="css 1k5ey5y">.css-1k5ey5y{letter-spacing:2px;text-align:center;font-size:1.25rem;color:#666;}</style><h1 class="css-1k5ey5y e1cbifli0">GyeongLog</h1></a></header><style data-emotion="css j5ul65">.css-j5ul65{max-width:740px;padding:40px 0;margin:0 auto;color:#444;}</style><article class="css-j5ul65 exqnev33"><style data-emotion="css 7d1t3x">.css-7d1t3x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:end;-webkit-box-align:end;-ms-flex-align:end;align-items:end;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;padding:20px 10px;}.css-7d1t3x h1{font-size:2rem;}.css-7d1t3x span{font-size:0.85rem;}</style><div class="css-7d1t3x exqnev31"><h1>[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항!</h1><span>2022.03.11</span></div><style data-emotion="css 15cp1bc">.css-15cp1bc{font-size:0.95rem;border-bottom:1px solid #eee;padding-bottom:20px;margin-bottom:20px;}</style><p class="css-15cp1bc exqnev30">목표 : <!-- -->[Gatsbyjs] Netlify로 호스팅 후 SEO 처리 시 유의사항을 확인해보세요.</p><style data-emotion="css 1aykd7d">.css-1aykd7d{letter-spacing:-0.04px;}.css-1aykd7d img{max-width:100%;}.css-1aykd7d h1{font-size:1.3rem;padding:20px 0px;font-weight:bold;border-bottom:1px solid #eee;margin-bottom:10px;}.css-1aykd7d h2{font-size:1.2rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d h3{font-size:1.1rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d b{font-weight:bold;}.css-1aykd7d p{line-height:28px;margin:10px 0;}.css-1aykd7d a{color:#29d;}.css-1aykd7d a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-1aykd7d deckgo-highlight-code{box-shadow:none;line-height:120%;}.css-1aykd7d deckgo-highlight-code .carbon{display:none;}.css-1aykd7d ul{list-style:inside;padding:8px 16px;line-height:140%;}.css-1aykd7d ol{padding:8px 32px;line-height:140%;list-style:auto;}.css-1aykd7d li{font-size:0.95rem;}.css-1aykd7d li>p:first-child{padding-left:0;}.css-1aykd7d blockquote{border-left:solid 4px #ccc;background:#f8f8f8;padding:4px 16px;margin:4px 0;}.css-1aykd7d blockquote p{padding:0;font-size:0.85rem;}.css-1aykd7d .multicode{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}.css-1aykd7d .multicode>*{width:48%;}.css-1aykd7d figure{padding:10px 0;}.css-1aykd7d figure figcaption{font-size:0.9rem;text-align:center;padding-top:10px;}</style><div class="css-1aykd7d exqnev32"><p>저는 이번에 제가 블로그를 만든 후 google search console에 블로그가 등록되지 않는 이슈를 해결한 과정을 공유해보려고 합니다.</p>
+<p>앞으로 google search console 라고 쓰면 너무 길어지니 GSC라고 부르겠습니다.</p>
+<p>저는 블로그를 만든 후 6개월간 해당 사이트가 구글에 등록되지 않았습니다. 그래서 왜 그럴까 계속 찾아보던 중 GSC에서 URL 검사를 해본 결과 URL이 구글에 등록되어 있지 않다는 메시지를 발견할 수 있었고, 그 아래에 있는 색인 생성 요청을 눌렀습니다.
+그리고 몇일 뒤 GSC에서 저에게 메일이 한통 왔습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; margin:10px 0; background: red;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7353fa404226ef1d06b929beb6e588fb/df56e/gscemail.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 79.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACZ0lEQVQ4y6VTS27UQBD1aUD8NlwCyIINJ0CcgG2UsECskwiJBSfgAKz5rFllMeMZCJoMseNx/9xu/8cez0NVnkFJCAiJlp6qurq7+r3qLs/VwOksRadO4J+eoVUSiXNIjIZzDqm1SG3C/r8Mr1kBNmnQpAKzyKLNcmRFCWMdirJGlhfQNoM2Ceq6ZlRVxSjLki3FyF+tVvBc1eHLvMQo7vHNABMNfDeAr4CpAnwJfDXA2UJjOvEx9n2MRiNMJhOMx2NMp1O2x8fHyLIMXp7n8H0fWius12tG3683PtAT+v6XJIr/VXLVAefZgJDggMAByuYIgzOkafrHw1sCF+E1TQOpNNcoWsTsh+cRhJQQQiCOBRaLBaIoQhCECMMQQRDA2vT6hFRQ2mCMQdd1XFiyJHOQ36NtW46TJTTNkufXv3LTYD7/wWyyLEdRFCirClRbay2DXpAKTjFCxesFkmT4TrSWpo4v82jzycl3zGazTdKM60aJhJCQUvIhUkDQ2gz/M02htIbWGiZJeG25XMIjSUVRQkrFzP53cMIsz/k2YmRMgrwoGMXGEmu6lC4kW5QlHClxjsuxLQM/CukmWVQPYhnHMYzR3G4EakGtJGyiES8intvEQIoYUgomoJRGktgh4VXKqzVQtUDe/I6sJqzZpz1tf43k7f/pVkMHvP2c4/ZejJ0jjQcHCjuHGg8P1OAfaTx+rfHoUOPuvsDzd3Yg0V/4h9vM24Sv3jt4T0Pc3BW4sStw74XArb0Bd/YF7r+UHPeenePJG3MpITO82qNz1eHTpGZ8JPgbbPwP/mbNrzEKl5dakBL+BExhtFAAb9jbAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="GSC에서 온 이메일"
+        title="GSC에서 온 이메일"
+        src="/static/7353fa404226ef1d06b929beb6e588fb/5a190/gscemail.png"
+        srcset="/static/7353fa404226ef1d06b929beb6e588fb/772e8/gscemail.png 200w,
+/static/7353fa404226ef1d06b929beb6e588fb/e17e5/gscemail.png 400w,
+/static/7353fa404226ef1d06b929beb6e588fb/5a190/gscemail.png 800w,
+/static/7353fa404226ef1d06b929beb6e588fb/df56e/gscemail.png 1188w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>내용은 저의 블로그 인덱스에 접근했을 때 블로그가 리디렉션이 되어 URL을 등록할 수 없다는 것이였습니다.
+그래서 저는 저의 블로그에 접속해서 어떤일이 일어나는지 확인해봤습니다.
+인덱스에 접근했을때 크롬 네트워크탭에서 확인해본 결과 작성된 html과 함께 상태값이 304가 전달되었습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 578px; margin:10px 0; background: red;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9573efb0e4ea38f1b1455822eac5a2e3/508ef/304.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABMUlEQVQY002O23LTMBRF/SUwqW3JknwJdiG+X0SchiZl+v8PEAf+YzEShenDmrN1RnufHWz335i04MPHB4TUxEJ5hDT/9XtkYggjyW4Xve00u4eYMBLEUhNs25316cK0nNAm9+EOp//xfpeolKYbWZ+umGyPNoX3z/bkjwW328Y0H+lHi9IpMtFIqUiU8W+HkMrjApVKOdQ9w2TfDuW03cih7rw3+LX9IGsviHJmXY9cXl45P1+ZFsvp/My3ywvX76+eumkRQtD1I4s9orXGGMO8WGb7lTzPCW73n9TVSpkNNF3jP3fDyOcvBxLlWhmK/Z6i2COkJAxDquqRpu2IoggppdfDOJFm2d/AvrS05cS0zHT9QD+MfsZx7Bu56XBmR1k9UteN167lNFuOpzOfyoo/0tXKE2HOp00AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="index 304"
+        title="index 304"
+        src="/static/9573efb0e4ea38f1b1455822eac5a2e3/508ef/304.png"
+        srcset="/static/9573efb0e4ea38f1b1455822eac5a2e3/772e8/304.png 200w,
+/static/9573efb0e4ea38f1b1455822eac5a2e3/e17e5/304.png 400w,
+/static/9573efb0e4ea38f1b1455822eac5a2e3/508ef/304.png 578w"
+        sizes="(max-width: 578px) 100vw, 578px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>304의 상태값을 검색해보니 인덱스 html이 캐싱되어 있어 리소스를 재전송 할 필요가 없다는 것이였습니다.</p>
+<blockquote>
+<p>클라이언트 리디렉션 응답 코드 304 Not Modified는 요청된 리소스를 재전송할 필요가 없음을 나타낸다.<br/>
+캐시된 자원으로의 암묵적인 리디렉션이다.</p>
+</blockquote>
+<p>그래서 저는 html을 캐싱하지 않도록 설정하기 위해 Netlify Dosc를 찾아봤습니다.
+저는 해결방법을 <a href="https://docs.netlify.com/routing/headers/#multi-value-headers">여기서</a> 찾을 수 있었습니다.</p>
+<h1>Netlify Custom Header</h1>
+<p>우선 netlify.toml라는 파일을 root directory에 생성합니다.</p>
+<deckgo-highlight-code   highlight-lines="undefined">
+          <code slot="code">[[headers]]
+  for = &quot;/*&quot;
+  [headers.values]
+  cache-control = &#39;&#39;&#39;
+  max-age=0,
+  no-cache,
+  no-store,
+  must-revalidate&#39;&#39;&#39;</code>
+        </deckgo-highlight-code>
+<h2>코드 설명</h2>
+<ul>
+<li>for: 해당 블로그의 모든 url에 아래의 설정 적용</li>
+<li>cache-control: 브라우저 캐싱에 대한 설정값</li>
+<li>max-age: 리소스가 최신 상태라고 판단할 최대 시간을 지정합니다. (캐싱을 하지 않아 0초)</li>
+<li>no-cache: 캐싱을 하지 않음</li>
+<li>no-store: 캐시는 클라이언트 요청 혹은 서버 응답에 관해서 어떤 것도 저장해서는 안됩니다.</li>
+<li>must-revalidate: 캐시는 사용하기 이전에 기존 리소스의 상태를 반드시 확인해야 하며 만료된 리소스는 사용되어서는 안됩니다.</li>
+</ul>
+<p>netlify.toml파일에 위와 같이 코드를 작성 후 배포를 해줍니다. 배포 후 빌드가 다 되면 이제 캐싱이 되지 않고 접근할 때 마다 상태값 200을 전달해줍니다. 이것까지 확인 후에 GSC에서 URL검사를 다시 한 후에 색인요청을 요청했습니다. 몇일 뒤에 저의 블로그의 URL이 GSC에 등록되었습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; margin:10px 0; background: red;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/eaa8c0785c66427ac196dc35c4261494/10d53/searchblog.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.50000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABdUlEQVQoz3WR63KkIBCFfY+dZBAVxwsCoqLoJJO9/Mn7v89JdU+xO8nu/viqoKlzON2dxXjF6GecRYF52bDFA+t2YItX6MGh7Yb/0msLPy0wdoG2M2RZI3t5/Q4/BTyfJaz18NPK92leWdC0+i8jqqW6Ng5aW/TDCFkoZN9OZzw95xB5gUZPUK1FpS4oyhpldYEsFSrV8Jlqqm65mwQFIb0sKoi8RJbL+4Eeu35E11lcmgF5riBEhaJoIGV9FwvJBsmMdER96fgjNkwPZyExuwO3/R17+Ilj/YXgbwj2DYu9oa57FKXipAkKQ3pqlaBzln6hi3Ee635gCivmdcNgaSkanTY8T2ZwGKyHsZ5NH9vnhMmM6NsRVgdmNBGtcjidBGjOpyfxhfvs0wiSz6eE3kXs4QfC9MLE8PZ76712aHvDdL3BYEZoM3JaWtanhI8tL1uE8zNCPLDtV7hxZjGJ0qwIuieS/stS/mztsUZtEY+z+hep5Q82+San8ge3XAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="구글에 블로그 검색 결과"
+        title="구글에 블로그 검색 결과"
+        src="/static/eaa8c0785c66427ac196dc35c4261494/5a190/searchblog.png"
+        srcset="/static/eaa8c0785c66427ac196dc35c4261494/772e8/searchblog.png 200w,
+/static/eaa8c0785c66427ac196dc35c4261494/e17e5/searchblog.png 400w,
+/static/eaa8c0785c66427ac196dc35c4261494/5a190/searchblog.png 800w,
+/static/eaa8c0785c66427ac196dc35c4261494/c1b63/searchblog.png 1200w,
+/static/eaa8c0785c66427ac196dc35c4261494/29007/searchblog.png 1600w,
+/static/eaa8c0785c66427ac196dc35c4261494/10d53/searchblog.png 1724w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>;</p>
+<h1>마무리</h1>
+<p>저는 저의 블로그가 구글 SEO에서 접근하지 못하는 이유가 사이트맵에 문제가 있어서 그런줄 알고 그것에 대해서만 디버깅을 해왔습니다.
+혹시 GSC에 사이트를 등록했고, 사이트맵을 등록했을 때 "사이트맵을 읽을 수 없음"이라고 나와서 사이트맵이 문제인가 라고 고민하시는 분들께 도움이 됬으면 좋겠습니다!</p></div><div></div></article><style data-emotion="css 1b5k876">.css-1b5k876{padding:30px 0;text-align:center;border-top:1px solid #ccc;background:#eee;}.css-1b5k876 a{color:#666;}</style><footer id="footer" class="css-1b5k876 eh8okj12"><style data-emotion="css yt1q3h">.css-yt1q3h{padding-top:8px;font-size:0.8rem;color:#666;}</style><p class="css-yt1q3h eh8okj10">Copyright © BY GyeongLog 2021</p></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Gatsbyjs/Netlify로-호스팅-후-SEO-처리-시-유의사항";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d69664561c90ab43065f.js"],"app":["/app-a8ae3919c49a26b8f93d.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-b2df44f50ba27917937d.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-dc046f5cedffa199fd19.js"],"component---src-pages-post-tsx":["/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"],"component---src-pages-skills-tsx":["/component---src-pages-skills-tsx-10caada873882e7293f8.js"]};/*]]>*/</script><script src="/polyfill-d69664561c90ab43065f.js" nomodule=""></script><script src="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js" async=""></script><script src="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js" async=""></script><script src="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js" async=""></script><script src="/app-a8ae3919c49a26b8f93d.js" async=""></script><script src="/framework-044cb0740845eef20740.js" async=""></script><script src="/webpack-runtime-25e65904cfbb412ebfd3.js" async=""></script></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.4.0"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">GyeongLog | [Javascript] Event Loop</title><link data-react-helmet="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/><meta data-react-helmet="true" name="description" content="Event Loop에 대해 이해하고 Call Stack, Task Queue, Heap에 대해 이해할 수 있다."/><meta data-react-helmet="true" property="og:title" content="GyeongLog | [Javascript] Event Loop"/><meta data-react-helmet="true" property="og:description" content="Event Loop에 대해 이해하고 Call Stack, Task Queue, Heap에 대해 이해할 수 있다."/><meta data-react-helmet="true" property="google-site-verification" content="1GpNCEOiYHBY3AjieDZndBpwcsf7EJ76U-Q-2YPkSuQ"/><meta data-react-helmet="true" property="og:image" content="https://user-images.githubusercontent.com/20200820/139200331-508670ad-af76-482e-82f9-0f1b62d9ed83.png"/><link as="script" rel="preload" href="/webpack-runtime-25e65904cfbb412ebfd3.js"/><link as="script" rel="preload" href="/framework-044cb0740845eef20740.js"/><link as="script" rel="preload" href="/app-a8ae3919c49a26b8f93d.js"/><link as="script" rel="preload" href="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js"/><link as="script" rel="preload" href="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js"/><link as="script" rel="preload" href="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"/><link as="fetch" rel="preload" href="/page-data/Javascript/Event-Loop/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><style data-emotion="css-global 1hm1e23">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}body{font-family:"Noto Sans Kr";}a{color:#3333;-webkit-text-decoration:none;text-decoration:none;}@media print{#header{display:none;}#footer{display:none;}}</style><style data-emotion="css p3g41d">.css-p3g41d{padding:20px 0;border-bottom:1px solid #eee;}</style><header id="header" class="css-p3g41d e1cbifli1"><a href="/"><style data-emotion="css 1k5ey5y">.css-1k5ey5y{letter-spacing:2px;text-align:center;font-size:1.25rem;color:#666;}</style><h1 class="css-1k5ey5y e1cbifli0">GyeongLog</h1></a></header><style data-emotion="css j5ul65">.css-j5ul65{max-width:740px;padding:40px 0;margin:0 auto;color:#444;}</style><article class="css-j5ul65 exqnev33"><style data-emotion="css 7d1t3x">.css-7d1t3x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:end;-webkit-box-align:end;-ms-flex-align:end;align-items:end;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;padding:20px 10px;}.css-7d1t3x h1{font-size:2rem;}.css-7d1t3x span{font-size:0.85rem;}</style><div class="css-7d1t3x exqnev31"><h1>[Javascript] Event Loop</h1><span>2022.02.28</span></div><style data-emotion="css 15cp1bc">.css-15cp1bc{font-size:0.95rem;border-bottom:1px solid #eee;padding-bottom:20px;margin-bottom:20px;}</style><p class="css-15cp1bc exqnev30">목표 : <!-- -->Event Loop에 대해 이해하고 Call Stack, Task Queue, Heap에 대해 이해할 수 있다.</p><style data-emotion="css 1aykd7d">.css-1aykd7d{letter-spacing:-0.04px;}.css-1aykd7d img{max-width:100%;}.css-1aykd7d h1{font-size:1.3rem;padding:20px 0px;font-weight:bold;border-bottom:1px solid #eee;margin-bottom:10px;}.css-1aykd7d h2{font-size:1.2rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d h3{font-size:1.1rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d b{font-weight:bold;}.css-1aykd7d p{line-height:28px;margin:10px 0;}.css-1aykd7d a{color:#29d;}.css-1aykd7d a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-1aykd7d deckgo-highlight-code{box-shadow:none;line-height:120%;}.css-1aykd7d deckgo-highlight-code .carbon{display:none;}.css-1aykd7d ul{list-style:inside;padding:8px 16px;line-height:140%;}.css-1aykd7d ol{padding:8px 32px;line-height:140%;list-style:auto;}.css-1aykd7d li{font-size:0.95rem;}.css-1aykd7d li>p:first-child{padding-left:0;}.css-1aykd7d blockquote{border-left:solid 4px #ccc;background:#f8f8f8;padding:4px 16px;margin:4px 0;}.css-1aykd7d blockquote p{padding:0;font-size:0.85rem;}.css-1aykd7d .multicode{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}.css-1aykd7d .multicode>*{width:48%;}.css-1aykd7d figure{padding:10px 0;}.css-1aykd7d figure figcaption{font-size:0.9rem;text-align:center;padding-top:10px;}</style><div class="css-1aykd7d exqnev32"><p>자바스크립트는 <b>싱글스레드</b>언어입니다.
+하지만 자바스크립트로 코드를 작성하다 보면 한나의 태스크만 처리하는 것이 아닌 많은 태스크를 동시에 처리하는것 처럼 느껴집니다.</p>
+<p>그럼 이제 자바스크립트는 싱글스레드 언어인데 어떻게 많은 태스크를 동시에 처리하는것 처럼 느껴지는지에 대해 알아보겠습니다.</p>
+<h1>Javascript Engine</h1>
+<p>이벤트 루프를 알아보기 전에 자바스크립트 엔진을 구성하는 3가지 영역에 대해 알아보겠습니다.</p>
+<h2>Call Stack</h2>
+<p>자바스크립트는 단 하나의 콜스택만 사용을 합니다.
+하나의 함수가 실행되면 이 함수 실행이 끝날 때까지 다른 어떤 태스크도 수행될 수 없다는 의미를 갖습니다.
+실행한 함수 내부에서 다른 함수를 실행할 경우 순차적으로 콜스택에 해당 함수가 생성되고, 해당 함수가 종료되면 콜스택에서도 제거됩니다.</p>
+<h2>Callback Queue</h2>
+<p>자바스크립트는 비동기 함수를 만났을 때 <b>Web API</b>라는 공간에 프레임을 생성하게 됩니다.
+Web API에서 해당 함수가 실행될 준비가 됬다면, Callback Queue에 함수를 생성하고 Web API에서는 제거되게 됩니다.
+Callback Queue에서는 Call Stack의 태스크가 끝날때 까지 기다린 뒤 탸스크가 끝나면 Callback Queue에 들어온 순서대로 태스크를 실행하게 됩니다.
+이 부분에 대해서는 아래에서 추가 설명 하겠습니다.</p>
+<h2>Heap</h2>
+<p>참조값을 갖는 객체, 함수, 배열이 힙에 저장됩니다.</p>
+<figure>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkF7gU%2Fbtq1Xlwhaaz%2FMAR4LAk3Tbj254Lp0fZK9k%2Fimg.png" alt="자바스크립트 메모리 구조: 콜스택, 메모리 힙" title="자바스크립트 메모리 구조: 콜스택, 메모리 힙">
+    <figcaption>
+        <a href="https://curryyou.tistory.com/276">자바스크립트 메모리 구조: 콜스택, 메모리 힙 - 카레유</a>
+    </figcaption>
+</figure>
+<p>배열, 객체, 함수를 선언했을 때 콜스택 상의 렉시컬 환경에 해당 인스턴스의 참조값이 저장이 되고, 힙 영역에는 해당 인스턴스가 생성 됩니다.</p>
+<h1>이벤트 루프 동작 방식</h1>
+<figure>
+    <img src="https://user-images.githubusercontent.com/20200820/155964887-2e1db2db-b62a-4d7c-991e-4c5a0f6174e0.png" title="이벤트 루프 동작 방식" alt="이벤트 루프 동작 방식">
+    <figcaption>이벤트 루프 동작 방식</figcaption>
+</figure>
+<p>이벤트 루프가 동작하는 방식에 대해 코드를 통해 확인해보겠습니다.</p>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">function first() {
+  console.log(&quot;첫번 째&quot;);
+  second();
+}
+
+function second() {
+  setTimeout(() =&gt; {
+    console.log(&quot;두번 째&quot;);
+  }, 1000);
+
+  third();
+}
+
+function third() {
+  console.log(&quot;세번 째&quot;);
+}
+
+first();</code>
+        </deckgo-highlight-code>
+<p>가장 먼저 first 함수가 콜스택에 쌓입니다.
+first에서 console.log가 실행되며 콜스택에 console.log가 추가 된 뒤 출력 후 콜스택에서 지워집니다.
+다음으로 second 함수가 콜스택에 추가되고, setTimeout을 Web API에 전달 하고 third함수를 실행합니다.
+third함수도 콜스택에 추가되고, console.log가 출력되고, 콜스택에서 third가 제거되고, second가 제거되고, first가 제거되면서 콜스택이 비어지게 됩니다.</p>
+<p>Web API로 전달된 setTimeout은 1초뒤에 콜백함수를 콜백큐에 전달하여 콜스택이 비면 해당 콜백함수를 콜스택에 전달하여 로직을 실행합니다.
+이때 콜백큐에서 콜스택이 비는것을 계속 감지하는 로직이 이벤트 루프입니다.</p></div><div></div></article><style data-emotion="css 1b5k876">.css-1b5k876{padding:30px 0;text-align:center;border-top:1px solid #ccc;background:#eee;}.css-1b5k876 a{color:#666;}</style><footer id="footer" class="css-1b5k876 eh8okj12"><style data-emotion="css yt1q3h">.css-yt1q3h{padding-top:8px;font-size:0.8rem;color:#666;}</style><p class="css-yt1q3h eh8okj10">Copyright © BY GyeongLog 2021</p></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Javascript/Event-Loop";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d69664561c90ab43065f.js"],"app":["/app-a8ae3919c49a26b8f93d.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-b2df44f50ba27917937d.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-dc046f5cedffa199fd19.js"],"component---src-pages-post-tsx":["/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"],"component---src-pages-skills-tsx":["/component---src-pages-skills-tsx-10caada873882e7293f8.js"]};/*]]>*/</script><script src="/polyfill-d69664561c90ab43065f.js" nomodule=""></script><script src="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js" async=""></script><script src="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js" async=""></script><script src="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js" async=""></script><script src="/app-a8ae3919c49a26b8f93d.js" async=""></script><script src="/framework-044cb0740845eef20740.js" async=""></script><script src="/webpack-runtime-25e65904cfbb412ebfd3.js" async=""></script></body></html>

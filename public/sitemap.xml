@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://ogt-blog.netlify.app/null/null</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/hand-book/일반면접</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/hand-book/기술면접</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Web/브라우저-렌더링-과정</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Gatsbyjs/Netlify로-호스팅-후-SEO-처리-시-유의사항</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Gatsbyjs/Netlify를-이용하여-HTTPS-무료-호스팅하기</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Javascript/Event-Loop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Jest/Mock를 이용해 함수 테스트하기</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Jest/비동기-테스트코드-작성하기</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Jest/Jest-Matcher</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Jest/Jest-프로젝트-환경설정-및-간단한-테스트코드-작성</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Javascript/불순함수와-순수함수</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Javascript/데이터-타입</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/React/Hook의 종류</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/React/Virtual-DOM이란?</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/React/리엑트를-사용하는-이유</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Web/SSR-CSR-SSG란?</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Computer Science/프로세스와-스레드란?</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Typescript/Type-Alias-VS-Interface</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Javascript/호이스팅이란?</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Javascript/this란?</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Computer Science/브라우저-저장소에-대해-알아보자</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Gatsbyjs/Gatsbyjs-프로젝트를-만들어보자</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Typescript/Indexed-Access-Types</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Typescript/Conditional-Types-정리</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/Typescript/Type-Alias-정리</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ogt-blog.netlify.app/skills/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>

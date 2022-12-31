@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.4.0"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">GyeongLog | [Jest] Jest Matcher</title><link data-react-helmet="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/><meta data-react-helmet="true" name="description" content="Jest에서 일반적으로 사용되는 Matcher에 대해 알 수 있다."/><meta data-react-helmet="true" property="og:title" content="GyeongLog | [Jest] Jest Matcher"/><meta data-react-helmet="true" property="og:description" content="Jest에서 일반적으로 사용되는 Matcher에 대해 알 수 있다."/><meta data-react-helmet="true" property="google-site-verification" content="1GpNCEOiYHBY3AjieDZndBpwcsf7EJ76U-Q-2YPkSuQ"/><meta data-react-helmet="true" property="og:image" content="https://user-images.githubusercontent.com/20200820/139200331-508670ad-af76-482e-82f9-0f1b62d9ed83.png"/><link as="script" rel="preload" href="/webpack-runtime-25e65904cfbb412ebfd3.js"/><link as="script" rel="preload" href="/framework-044cb0740845eef20740.js"/><link as="script" rel="preload" href="/app-a8ae3919c49a26b8f93d.js"/><link as="script" rel="preload" href="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js"/><link as="script" rel="preload" href="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js"/><link as="script" rel="preload" href="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"/><link as="fetch" rel="preload" href="/page-data/Jest/Jest-Matcher/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><style data-emotion="css-global 1hm1e23">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}body{font-family:"Noto Sans Kr";}a{color:#3333;-webkit-text-decoration:none;text-decoration:none;}@media print{#header{display:none;}#footer{display:none;}}</style><style data-emotion="css p3g41d">.css-p3g41d{padding:20px 0;border-bottom:1px solid #eee;}</style><header id="header" class="css-p3g41d e1cbifli1"><a href="/"><style data-emotion="css 1k5ey5y">.css-1k5ey5y{letter-spacing:2px;text-align:center;font-size:1.25rem;color:#666;}</style><h1 class="css-1k5ey5y e1cbifli0">GyeongLog</h1></a></header><style data-emotion="css j5ul65">.css-j5ul65{max-width:740px;padding:40px 0;margin:0 auto;color:#444;}</style><article class="css-j5ul65 exqnev33"><style data-emotion="css 7d1t3x">.css-7d1t3x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:end;-webkit-box-align:end;-ms-flex-align:end;align-items:end;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;padding:20px 10px;}.css-7d1t3x h1{font-size:2rem;}.css-7d1t3x span{font-size:0.85rem;}</style><div class="css-7d1t3x exqnev31"><h1>[Jest] Jest Matcher</h1><span>2022.01.17</span></div><style data-emotion="css 15cp1bc">.css-15cp1bc{font-size:0.95rem;border-bottom:1px solid #eee;padding-bottom:20px;margin-bottom:20px;}</style><p class="css-15cp1bc exqnev30">목표 : <!-- -->Jest에서 일반적으로 사용되는 Matcher에 대해 알 수 있다.</p><style data-emotion="css 1aykd7d">.css-1aykd7d{letter-spacing:-0.04px;}.css-1aykd7d img{max-width:100%;}.css-1aykd7d h1{font-size:1.3rem;padding:20px 0px;font-weight:bold;border-bottom:1px solid #eee;margin-bottom:10px;}.css-1aykd7d h2{font-size:1.2rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d h3{font-size:1.1rem;padding:10px 0px;font-weight:bold;margin:4px 0;}.css-1aykd7d b{font-weight:bold;}.css-1aykd7d p{line-height:28px;margin:10px 0;}.css-1aykd7d a{color:#29d;}.css-1aykd7d a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-1aykd7d deckgo-highlight-code{box-shadow:none;line-height:120%;}.css-1aykd7d deckgo-highlight-code .carbon{display:none;}.css-1aykd7d ul{list-style:inside;padding:8px 16px;line-height:140%;}.css-1aykd7d ol{padding:8px 32px;line-height:140%;list-style:auto;}.css-1aykd7d li{font-size:0.95rem;}.css-1aykd7d li>p:first-child{padding-left:0;}.css-1aykd7d blockquote{border-left:solid 4px #ccc;background:#f8f8f8;padding:4px 16px;margin:4px 0;}.css-1aykd7d blockquote p{padding:0;font-size:0.85rem;}.css-1aykd7d .multicode{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}.css-1aykd7d .multicode>*{width:48%;}.css-1aykd7d figure{padding:10px 0;}.css-1aykd7d figure figcaption{font-size:0.9rem;text-align:center;padding-top:10px;}</style><div class="css-1aykd7d exqnev32"><p>이번에는 Jest를 사용할 때 일반적으로 사용하는 몇가지의 Matcher에 대해 알아보겠습니다.</p>
+<h1><a href="https://jestjs.io/docs/expect#tobevalue">.toBe(value)</a></h1>
+<p>expect에서 전달된 값을 비교하거나 객체 인스턴스 참조 ID를 확인하는 데 사용합니다.</p>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">test(&quot;two plus two is four&quot;, () =&gt; {
+  expect(2 + 2).toBe(4);
+});</code>
+        </deckgo-highlight-code>
+<h1><a href="https://jestjs.io/docs/expect#toequalvalue">.toEqual(value)</a></h1>
+<p>객체의 값을 비교할 때 사용됩니다.</p>
+<p>객체의 인스턴스 참조 ID를 비교하는 것이 아닌 객체의 모든 속성을 재귀적으로 비교하여 값이 같은지를 비교합니다.</p>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">test(&quot;object check&quot;, () =&gt; {
+  const obj = { one: 1, two: 2 };
+
+  expect({ one: 1, two: 2 }).toBe(obj);
+});
+/* .toBe를 사용할 경우 아래와 같이 에러가 발생
+    expect(received).toBe(expected) // Object.is equality
+
+    If it should pass with deep equality, replace &quot;toBe&quot; with &quot;toStrictEqual&quot;
+
+    Expected: {&quot;one&quot;: 1, &quot;two&quot;: 2}
+    Received: serializes to the same string
+*/
+
+test(&quot;object check&quot;, () =&gt; {
+  const obj = { one: 1, two: 2 };
+
+  expect({ one: 1, two: 2 }).toEqual(obj);
+});</code>
+        </deckgo-highlight-code>
+<h1><a href="https://jestjs.io/docs/using-matchers#truthiness">Null, Undefined, False 구분 메서드</a></h1>
+<ul>
+<li><a href="https://jestjs.io/docs/expect#tobenull">.toBeNull()</a> : expect에 전달된 값이 null인 경우 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobeundefined">.toBeUndefined()</a> : expect에 전달된 값이 undefined인 경우 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobedefined">.toBeDefined()</a> : expect에 전달된 값이 undefined이 아닌 경우 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobetruthy">.toBeTruthy()</a> : expect에 전달된 값이 if 명령문에서 true로 취급 하는 값인 경우 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobefalsy">.toBeFalsy()</a> : expect에 전달된 값이 if 명령문에서 false로 취급 하는 값인 경우 통과</li>
+</ul>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">test(&quot;Check Null, Undefined, False&quot;, () =&gt; {
+  // 값이 null일 경우만 통과
+  expect(null).toBeNull();
+
+  // 값이 undefined만 아니면 통과
+  expect(n).toBeDefined();
+  expect({}).toBeDefined();
+  expect(100).toBeDefined();
+
+  // 값이 undefined일 경우만 통과
+  expect(undefined).toBeUndefined();
+
+  // if문에서 true로 취급하는 경우 통과
+  expect(true).toBeTruthy();
+  expect(1).toBeTruthy();
+
+  // if문에서 false로 취급하는 경우 통과
+  expect(false).toBeFalsy();
+  expect(null).toBeFalsy();
+  expect(0).toBeFalsy();
+  expect(&quot;&quot;).toBeFalsy();
+});</code>
+        </deckgo-highlight-code>
+<h1><a href="https://jestjs.io/docs/using-matchers#numbers">Number 구분 메서드</a></h1>
+<ul>
+<li><a href="https://jestjs.io/docs/expect#tobegreaterthannumber--bigint">.toBeGreaterThan(value)</a> : value값이 expect value보다 크면 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobegreaterthanorequalnumber--bigint">.toBeGreaterThanOrEqual(value)</a> : value값이 expect value보다 크거나 같으면 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobelessthannumber--bigint">.toBeLessThan(value)</a> : value값이 expect value보다 작으면 통과</li>
+<li><a href="https://jestjs.io/docs/expect#tobelessthanorequalnumber--bigint">.toBeLessThanOrEqual(value)</a> : value값이 expect value보다 작거나 같으면 통과</li>
+</ul>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">test(&quot;two plus two&quot;, () =&gt; {
+  const value = 2 + 2;
+  // value &gt; 3
+  expect(value).toBeGreaterThan(3);
+  // value &gt;= 4
+  expect(value).toBeGreaterThanOrEqual(4);
+  // value &lt; 5
+  expect(value).toBeLessThan(5);
+  // value &lt;= 4
+  expect(value).toBeLessThanOrEqual(4);
+});</code>
+        </deckgo-highlight-code>
+<h1><a href="https://jestjs.io/docs/using-matchers#strings">정규식으로 문자열 체크하기</a></h1>
+<p>정규표현식으로 문자열을 확인할 경우에는 .toMatch를 사용할 수 있습니다.</p>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">// 문자열에 I가 포함되어 있지 않은 경우 통과
+test(&quot;there is no I in team&quot;, () =&gt; {
+  expect(&quot;team&quot;).not.toMatch(/I/);
+});
+
+//문자열에 stop이 포함되어 있으면 있으면 통과
+test(&#39;but there is a &quot;stop&quot; in Christoph&#39;, () =&gt; {
+  expect(&quot;Christoph&quot;).toMatch(/stop/);
+});</code>
+        </deckgo-highlight-code>
+<h1><a href="https://jestjs.io/docs/using-matchers#exceptions">예외 체크하기</a></h1>
+<p>예외를 체크할 때에는 <a href="https://jestjs.io/docs/expect#tothrowerror">.toThrow(error?)</a>를 이용하여 테스트할 수 있습니다.</p>
+<h2>.toThrow에 전달 가능한 인자의 종류</h2>
+<ul>
+<li>정규식 : 오류 메시지가 패턴과 일치할 경우 통과</li>
+<li>문자열 : 오류 메시지가 문자열과 동일하다면 통과</li>
+<li>오류 객체: 오류 메세지가 오류 객체의 message의 값과 같다면 통과</li>
+<li>오류 클레스: 오류 오브젝트의 인스턴스와 클레스가 같으면 통과</li>
+</ul>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">function compileAndroidCode() {
+  throw new Error(&quot;you are using the wrong JDK&quot;);
+}
+
+test(&quot;compiling android goes as expected&quot;, () =&gt; {
+  // 에러가 발생했다면 통과
+  expect(() =&gt; compileAndroidCode()).toThrow();
+
+  // 에러 객체의 인스턴스가 Error라면 통과
+  expect(() =&gt; compileAndroidCode()).toThrow(Error);
+
+  // error 메시지가 &quot;you are using the wrong JDK&quot; 라면 통과
+  expect(() =&gt; compileAndroidCode()).toThrow(&quot;you are using the wrong JDK&quot;);
+
+  // error 메시지에 JDK라는 문자열이 있다면 통과
+  expect(() =&gt; compileAndroidCode()).toThrow(/JDK/);
+});</code>
+        </deckgo-highlight-code></div><div></div></article><style data-emotion="css 1b5k876">.css-1b5k876{padding:30px 0;text-align:center;border-top:1px solid #ccc;background:#eee;}.css-1b5k876 a{color:#666;}</style><footer id="footer" class="css-1b5k876 eh8okj12"><style data-emotion="css yt1q3h">.css-yt1q3h{padding-top:8px;font-size:0.8rem;color:#666;}</style><p class="css-yt1q3h eh8okj10">Copyright © BY GyeongLog 2021</p></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Jest/Jest-Matcher";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d69664561c90ab43065f.js"],"app":["/app-a8ae3919c49a26b8f93d.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-b2df44f50ba27917937d.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-dc046f5cedffa199fd19.js"],"component---src-pages-post-tsx":["/component---src-pages-post-tsx-307467b24c4b8ce13a27.js"],"component---src-pages-skills-tsx":["/component---src-pages-skills-tsx-10caada873882e7293f8.js"]};/*]]>*/</script><script src="/polyfill-d69664561c90ab43065f.js" nomodule=""></script><script src="/component---src-pages-post-tsx-307467b24c4b8ce13a27.js" async=""></script><script src="/a7de6d14c1276eaaa5f004764b84743b9226c46d-f4ddc8985bea0ff2acf5.js" async=""></script><script src="/75539b7a473e2f065c61d52e525219f6c94ed5fd-14034ecd941e2085ffb4.js" async=""></script><script src="/app-a8ae3919c49a26b8f93d.js" async=""></script><script src="/framework-044cb0740845eef20740.js" async=""></script><script src="/webpack-runtime-25e65904cfbb412ebfd3.js" async=""></script></body></html>
